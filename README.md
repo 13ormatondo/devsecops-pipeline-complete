@@ -29,7 +29,7 @@ Pipeline CI/CD complète intégrant la sécurité à chaque étape : Threat Mode
 
 ## 🧠 Threat Modeling (IriusRisk)
 
-![Threat Modeling](docs/vulnerable-app-pipeline-risk-controls-summary-and-evidence-report.pdf)
+> 📄 **[Télécharger le rapport complet IriusRisk (PDF)](docs/vulnerable-app-pipeline-risk-controls-summary-and-evidence-report.pdf)**
 
 ## 📊 Résultats SonarQube
 
